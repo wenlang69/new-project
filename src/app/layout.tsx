@@ -2,8 +2,11 @@ import { Metadata } from 'next';
 import * as React from 'react';
 
 import '@/styles/globals.css';
-// !STARTERCONF This is for demo purposes, remove @/styles/colors.css import immediately
-import '@/styles/colors.css';
+
+import { cn } from '@/lib/utils';
+
+import Header from '@/components/header';
+import { ThemeProvider } from '@/components/theme-provider';
 
 import { siteConfig } from '@/constant/config';
 
@@ -56,7 +59,20 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <body>{children}</body>
+      <body className={cn('min-h-screen bg-background font-sans antialiased')}>
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='system'
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          {children}
+          <footer className='py-4 text-center'>
+            © {new Date().getFullYear()} By Wenlang
+          </footer>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
