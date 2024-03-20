@@ -3,6 +3,7 @@ import * as React from 'react';
 
 import '@/styles/globals.css';
 
+import { fontMono } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
 
 import Header from '@/components/header';
@@ -59,7 +60,12 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <body className={cn('min-h-screen bg-background font-sans antialiased')}>
+      <body
+        className={cn(
+          'min-h-screen bg-background font-mono antialiased',
+          fontMono.variable
+        )}
+      >
         <ThemeProvider
           attribute='class'
           defaultTheme='system'

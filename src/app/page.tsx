@@ -1,12 +1,9 @@
 'use client';
 
 import Head from 'next/head';
+import Link from 'next/link';
 import * as React from 'react';
 import '@/lib/env';
-
-import ArrowLink from '@/components/links/ArrowLink';
-import ButtonLink from '@/components/links/ButtonLink';
-import UnstyledLink from '@/components/links/UnstyledLink';
 
 /**
  * SVGR Support
@@ -36,16 +33,16 @@ export default function HomePage() {
             Import, Seo, Link component, pre-configured with Husky{' '}
           </p>
           <p className='mt-2 text-sm text-gray-700'>
-            <ArrowLink href='https://github.com/theodorusclarence/ts-nextjs-tailwind-starter'>
+            <Link href='https://github.com/theodorusclarence/ts-nextjs-tailwind-starter'>
               See the repository
-            </ArrowLink>
+            </Link>
           </p>
 
-          <ButtonLink className='mt-6' href='/components' variant='light'>
+          <Link className='mt-6' href='/components'>
             See all components
-          </ButtonLink>
+          </Link>
 
-          <UnstyledLink
+          <Link
             href='https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Ftheodorusclarence%2Fts-nextjs-tailwind-starter'
             className='mt-4'
           >
@@ -56,7 +53,7 @@ export default function HomePage() {
               src='https://vercel.com/button'
               alt='Deploy with Vercel'
             />
-          </UnstyledLink>
+          </Link>
         </div>
       </section>
     </main>
